@@ -1,0 +1,8 @@
+何かあれば随時追記してく
+
+Windowsで実行する場合
+Dockerデスクトップ起動しとくこと※効率的なやり方は空き時間で調べる
+
+Dockerfile実行時
+→docker build -t 実行したいプログラム名
+docker run 実行したいプログラム名
