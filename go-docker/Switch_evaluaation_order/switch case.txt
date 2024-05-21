@@ -1,0 +1,4 @@
+switch case
+
+上から下に対してcaseを評価
+条件が一致した時点でbreak発動
