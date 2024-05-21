@@ -1,0 +1,4 @@
+条件なしswitch
+
+形的にはswitch trueと同義
+→if-then-elseの表現をシンプルにできる
