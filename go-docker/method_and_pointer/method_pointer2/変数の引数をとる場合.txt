@@ -1,0 +1,20 @@
+変数の引数をとる場合
+
+
+特定の型の変数をとる必要がある
+
+例：
+var v Vertex
+fmt.Println(AbsFunc(v))  // OK
+fmt.Println(AbsFunc(&v)) // Compile error!
+
+変換レシーバである場合
+呼び出し時に変数又はポインタのイオずれ化のレシーバとして受け取る
+
+例：
+var v Vertex
+fmt.Println(v.Abs()) // OK
+p := &v
+fmt.Println(p.Abs()) // OK
+
+※この場合、 p.Abs() は (*p).Abs() として解釈

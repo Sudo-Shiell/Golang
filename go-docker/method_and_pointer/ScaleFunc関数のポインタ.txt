@@ -1,0 +1,17 @@
+ScaleFunc関数のポインタ
+
+ポインタを引数に取る ScaleFunc 関数は、ポインタを渡す必要がある
+var v Vertex
+ScaleFunc(v, 5)  // Compile error!
+ScaleFunc(&v, 5) // OK
+
+
+メソッドがポインタレシーバである場合、呼び出し時に、変数、または、ポインタのいずれかのレシーバとして取ることができる
+var v Vertex
+v.Scale(5)  // OK
+p := &v
+p.Scale(10) // OK
+
+※v.Scale(5) のステートメントでは、 v は変数であり、ポインタではないため、メソッドでポインタレシーバが自動的に呼びだされる
+
+Scale メソッドはポインタレシーバを持つ場合、Goは利便性のため、 v.Scale(5) のステートメントを (&v).Scale(5) として解釈
