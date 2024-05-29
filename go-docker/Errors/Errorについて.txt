@@ -1,0 +1,23 @@
+Errorについて
+
+Goのプログラムは、エラーの状態を error値で表現する
+error型は fmt.Stringer に似た組み込みのインタフェースである
+例:
+
+type error interface {
+    Error() string
+}
+
+※fmt.Stringer と同様に、fmtパッケージは、変数を文字列で出力する際に errorインタフェースを確認する
+
+また、error変数を返す際、呼び出し元はエラーが nil かどうかを確認することでエラーをハンドルする
+
+例：
+i, err := strconv.Atoi("42")
+if err != nil {
+    fmt.Printf("couldn't convert number: %v\n", err)
+    return
+}
+fmt.Println("Converted integer:", i)
+
+上記はnil の error は成功したことを示し、 nilではない error は失敗したことを示す

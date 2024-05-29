@@ -1,0 +1,9 @@
+stringerについて
+
+stringer→もっともよく使われているfmtパッケージに定義されているinterfaceの一つ
+
+type Stringer interface {
+    String() string
+}
+
+stringとして表現することができる型で、fmt パッケージ(と、多くのパッケージ)では、変数を文字列で出力するためにこのインタフェースがあることを確認する

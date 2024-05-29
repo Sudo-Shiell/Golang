@@ -1,0 +1,21 @@
+switchのアサーション
+
+switch はいくつかのアサーションを直列に使用できる構造となっている。
+
+switch型は通常のswitch文と似ていますが、switch型のcaseは型(値ではない)を指定、それらの値は指定されたインターフェースの値が保持する値の型と比較される
+
+例
+switch v := i.(type) {
+case T:
+    // here v has type T
+case S:
+    // here v has type S
+default:
+    // no match; here v has the same type as i
+}
+
+switch型の宣言は、アサーション i.(T) と同じ構文を持つが、特定の型 T はキーワード type に置き換えられる。
+
+このswitch文は、インターフェースの値 i が 型 T または S の値を保持するかどうかをテストする。 
+T および S の各caseにおいて、変数 v はそれぞれ 型 T または S であり、 i によって保持される値を保持。
+defaultの場合(一致するものがない場合)、変数 v は同じインターフェース型で値は i となる。
