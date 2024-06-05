@@ -13,7 +13,7 @@ type User struct {
 }
 
 func main()  {
-	dsn := "username:userpassword@tcp(localhost:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "username:userpassword@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
